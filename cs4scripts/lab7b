@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Welcome $1"
+sumTotal=0
+prodTotal=1
+for (( i=2; i<=$#; i++ )); do
+	eval arg=\$$i
+	let "sumTotal += $arg" 
+	let "prodTotal *= $arg" 
+done
+echo "Sum is: $sumTotal"
+echo "Product is: $prodTotal"

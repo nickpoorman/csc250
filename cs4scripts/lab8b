@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Check the number of arguments
+
+#if [ $# -ne 3 ]; then #modified this so it can accept 
+		       #any number of arguments greater then 3
+if [ $# -lt 3 ]; then
+	echo "$0: number1 number2 number3 are not given"
+	exit 1
+fi
+
+printf "unsorted: "
+printf '%s ' $@
+printf '\n'
+
+printf 'sorted: '
+sorted=($(printf '%s\n' $@ | sort))
+printf '%s ' ${sorted[@]}
+printf '\n'
+
+(( lastElementIndex = ${#sorted[@]} - 1 ))
+printf 'highest number is: %s\n' ${sorted[lastElementIndex]}
+
+(( sumLower = ${sorted[0]} + ${sorted[1]} ))
+printf 'sum of the lower two numbers is: %s\n' $sumLower

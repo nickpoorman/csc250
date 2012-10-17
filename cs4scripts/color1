@@ -1,0 +1,8 @@
+echo "What is your favorite color?"
+read color
+if [ "$color" = "blue" ]
+then
+echo "blue is the best color"
+else
+echo "What? Thats not a good answer"
+fi

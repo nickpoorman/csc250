@@ -1,0 +1,12 @@
+#!/bin/bash
+# Check the arguments
+if [ $# -ne 3 ]; then
+        echo "$0: number1 number2 number3 are not given"
+	exit 1
+fi
+# Get the sum of the lower two numbers
+sumTotal=0
+for arg in $@; do
+	let "sumTotal += $arg" 
+done
+echo "$sumTotal"
