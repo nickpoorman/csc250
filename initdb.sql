@@ -1,3 +1,6 @@
+/*
+	Silly lord of the rings databse to demo mysql.
+*/
 DROP TABLE lotr;
 CREATE DATABASE IF NOT EXISTS lotr;
 
