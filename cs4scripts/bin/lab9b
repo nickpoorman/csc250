@@ -1,0 +1,31 @@
+#!/bin/bash
+# This script ends and stops asking for files when the EOF is entered.
+
+echo "Please enter a directory to backup to: "
+read backupDir
+
+# check if the directory exists
+if [ ! -d "$backupDir" ]; then
+	echo "Directory does not exist: $backupDir"
+	echo "Should we create it? (yes/no)"
+	read answer
+	if [ $answer == "yes" ]; then
+		echo "Created directory: $backupDir"
+		mkdir $backupDir
+	else
+		exit 1;
+	fi
+fi
+
+echo "Please enter a file to backup: "
+while read line
+do
+	if [ -e "$line" ]; then
+		cp $line $backupDir
+		echo "Backed up file: $line to $backupDir"
+	else
+		echo "File does not exist: $line"
+	fi
+
+	echo "Please enter another file to backup: "
+done

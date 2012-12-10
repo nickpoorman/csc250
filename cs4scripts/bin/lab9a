@@ -1,0 +1,22 @@
+#!/bin/bash
+# Check the arguments
+if [ $# -ne 2 ]; then
+        echo "Usage: $0 FILE_NAME DIR"
+        exit 1
+fi
+
+# check if the directory exists
+if [ ! -d "$2" ]; then
+	echo "Directory does not exist: $2"
+	exit 1;
+fi
+
+while read line         
+do         
+	if [ -e "$line" ]; then
+		cp $line $2
+		echo "Backed up file: $line to $2"
+	else
+		echo "File does not exist: $line"
+	fi
+done < $1

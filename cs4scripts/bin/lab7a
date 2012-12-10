@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Please enter your name"
+read name
+clear
+echo "Welcome $name"
+sumTotal=0
+prodTotal=1
+for (( i=0; i<3; i++ )); do
+	echo "Please enter a number"
+	read number
+	let "sumTotal += $number" 
+	let "prodTotal *= $number" 
+done
+echo "Sum is: $sumTotal"
+echo "Product is: $prodTotal"

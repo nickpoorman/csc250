@@ -1,0 +1,19 @@
+#!/bin/bash
+echo -n "Please enter a directory name ->"
+read d
+if [ -z $d ]
+then
+exit 1
+fi
+if [ ! -e $d ]
+then
+echo "$d does not exist"
+else
+echo "$d does exist"
+if [ -d $d ]
+then
+echo "$d is a directory"
+else
+echo "$d is not a directory"
+fi
+fi

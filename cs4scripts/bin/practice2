@@ -1,0 +1,6 @@
+#!/bin/bash
+echo Please enter your firstname and press the Enter key
+read FN
+echo Please enter your lastname and press the Enter key
+read LN
+echo "Hi! $LN, $FN !"

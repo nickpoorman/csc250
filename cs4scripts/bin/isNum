@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ $1 =~ ^[0-9]+$ ]]; then
+	echo "its a num"
+else
+	echo "its not a num"
+fi
